@@ -26,7 +26,7 @@
         <form action="/tarea" method="POST">
     @endisset
 
-        @csrfisset($tarea)
+        @csrf
         <label for="tarea">Nombre de la tarea: </label><br>
         <input type="text" name="tarea" value={{isset($tarea)?$tarea->tareas : ''}}>
         <br>
