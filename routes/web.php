@@ -17,11 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hola-mundo', function () {
-    return view('paginas/hola-mundo');
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/grabaciones/{nombre}/{ao?}/{cantidad?}', function ($nombre, $ao=null, $cantidad = null) {
-    return view('paginas/grabaciones',compact('nombre','ao','cantidad'));
-});
-
+require __DIR__.'/auth.php';
